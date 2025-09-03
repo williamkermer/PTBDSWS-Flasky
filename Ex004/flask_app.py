@@ -1,6 +1,6 @@
 #Exercicio 4
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
@@ -21,7 +21,7 @@ def user_profile(nome = "William Kermer", prontuario="PT3032191", instituicao="I
     return render_template('user.html', name=nome, prontuario=prontuario, instituicao=instituicao)
 
 @app.route("/contextorequisicao/<nome>")
-def contexto_requisicao(nome = "William Kermer"):
+def contexto_requisicao(nome):
     user_agent = request.headers.get("User-Agent", "desconhecido")
     remote_ip  = request.remote_addr or "desconhecido"
     host       = request.host

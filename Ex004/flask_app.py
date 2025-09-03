@@ -15,19 +15,20 @@ def home():
     """Renderiza a página inicial com a data e hora atuais."""
     return render_template('index.html', current_time=datetime.utcnow())
 
+# Rota - Identificação
 @app.route("/user/<nome>/<prontuario>/<instituicao>")
 def user_profile(nome = "William Kermer", prontuario="PT3032191", instituicao="IFSP"):
 
     return render_template('user.html', name=nome, prontuario=prontuario, instituicao=instituicao)
 
+# Rota - Requisição
 @app.route("/contextorequisicao/<nome>")
 def contexto_requisicao(nome):
     user_agent = request.headers.get("User-Agent", "desconhecido")
     remote_ip  = request.remote_addr or "desconhecido"
     host       = request.host
 
-    return render_template('req.html',name=nome, user_agent=user_agent, remote_ip=remote_ip, host=host)
-    
+    return render_template('req.html',name=nome, user_agent=user_agent, remote_ip=remote_ip, host=host)  
 
 # Rota específica para a página de erro
 @app.route('/rotainexistente')

@@ -1,3 +1,5 @@
+#Exercício 5
+
 from flask import Flask, render_template, request, url_for, session, redirect, flash
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -18,7 +20,6 @@ class NameForm(FlaskForm):
 # Rota - Página Inicial
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    """Renderiza a página inicial com a data e hora atuais."""
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')

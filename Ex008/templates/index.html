@@ -58,7 +58,7 @@
             <tr>
                 <td><strong>{{ role.name }}</strong></td>
                 <td>
-                    {% for user in role.users.order_by('username') %}
+                    {% for user in role.users.order_by('id') %}
                         {{ loop.index }}. {{ user.username }}<br>
                     {% else %}
                         <span class="text-muted">Nenhum usuário nesta função.</span>

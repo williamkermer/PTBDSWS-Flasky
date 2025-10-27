@@ -1,10 +1,11 @@
-# Ignore compiled Python files
+
+venv/
+__pycache__/
 *.pyc
 
-# Ignore Python cache directories
-__pycache__/
-
-# Ignore virtual environment directories
-venv/
+data.sqlite
 
 .env
+
+.DS_Store
+Thumbs.db

@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Avaliação Semestral{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -18,11 +18,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">Flasky</a>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">Avaliação semestral</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.professores') }}">Cadastro de Professores</a></li>
+                <li><a href="{{ url_for('main.unavailable') }}">Cadastro de Disciplinas</a></li>
+                <li><a href="{{ url_for('main.unavailable') }}">Cadastro de Alunos</a></li>
+                <li><a href="{{ url_for('main.unavailable') }}">Cadastro de Cursos</a></li>
+                <li><a href="{{ url_for('main.unavailable') }}">Cadastro de Ocorrências</a></li>
             </ul>
         </div>
     </div>
